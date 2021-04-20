@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <title>Document</title>
+</head>
+
+<body style="direction: rtl;">
+    <nav class="shadow-sm custom-navbar">
+        <!-- <div class="container"> -->
+            <!-- this item hides on sm and more -->
+            <div class="w-100 custom-mobile-navbar">
+                <div class="container-fluid d-flex d-sm-none justify-content-between align-items-center custom-mobile-nav">
+                    <button type="button" class="btn" @click="openMenu = true"  @click.away="openMenu = false" x-data="{openMenu: false}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27.794" height="17" viewBox="0 0 27.794 17">
+                            <g id="Group_2652" data-name="Group 2652" transform="translate(0 0.5)">
+                              <path id="Path_159" data-name="Path 159" d="M0,0H12.794" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+                              <path id="Path_162" data-name="Path 162" d="M0,0H12.794" transform="translate(15)" fill="none" stroke="#075985" stroke-width="1"/>
+                              <path id="Path_160" data-name="Path 160" d="M0,0H12.794" transform="translate(0 8)" fill="none" stroke="#38bdf8" stroke-width="1"/>
+                              <path id="Path_158" data-name="Path 158" d="M0,0H12.794" transform="translate(15 8)" fill="none" stroke="#0284c7" stroke-width="1"/>
+                              <path id="Path_156" data-name="Path 156" d="M0,0H12.794" transform="translate(0 16)" fill="none" stroke="#075985" stroke-width="1"/>
+                              <path id="Path_157" data-name="Path 157" d="M0,0H12.794" transform="translate(15 16)" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+                            </g>
+                        </svg>
+                        <div class="custom-mobile-menu py-3 shadow" :class="openMenu ? 'custom-open-menu' : 'custom-close-menu'">
+                            <ul class="d-flex flex-column align-items-start pr-2" x-data="{openNavLink: 1}">
+                                <li class="mb-2" @click="openNavLink = 1">
+                                    <span class="text-base"> گزینه یک </span>
+                                    <ul class="d-flex flex-column custom-transition custom-max-0 pr-3" :class="{'custom-max-height' : openNavLink === 1}">
+                                        <li class="mb-2">
+                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mb-2" @click="openNavLink = 2">
+                                    <span class=""> گزینه یک </span>
+                                    <ul class="d-flex flex-column custom-transition custom-max-0 pr-3" :class="{'custom-max-height' : openNavLink === 2}">
+                                        <li class="mb-2">
+                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mb-2" @click="openNavLink = 3">
+                                    <span class=""> گزینه یک </span>
+                                    <ul class="d-flex flex-column custom-transition custom-max-0 pr-3" :class="{'custom-max-height' : openNavLink === 3}">
+                                        <li class="mb-2">
+                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </button>
+                    <div class="">
+                        <img src="./logo.png" alt="logo" class="custom-nav-logo" />
+                    </div>
+                    <a href="#" class="m-2 btn btn-outline-light text-dark">
+                        <i class="fa fa-shopping-cart text-24"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- navbar on windows size -->
+            <div class=" shadow-sm">
+                <div class="container-fluid d-flex justify-content-between align-items-center custom-mobile-nav">
+                    <div class="w-100">
+                        <form action="" class="mb-0 custom-navbar-searchbox">
+                            <input type="text" class="w-100" placeholder="جست و جو" />
+                            <i class="fa fa-search text-base "></i>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="btn btn-outline-light text-dark text-sm custom-w-28 ml-1">
+                            پنل فروشگاه
+                        </a>
+                        <a href="#" class="btn btn-outline-light text-dark">
+                            <i class="fa fa-user text-24"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </nav>
+
+    <!-- <script src="/bootstrap.min.js"></script> -->
+    <!-- <script src="/jquery.min.js"></script> -->
+    <!-- <script src="/popper.min.js"></script> -->
+</body>
+
+</html>

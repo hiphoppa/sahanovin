@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'vazir';
+    src: url(./fonts/vazir/Vazir.eot);
+    src:url(./fonts/vazir/Vazir.eot) format('embedded-opentype'), url(./fonts/vazir/Vazir.ttf) format('truetype'), url(./fonts/vazir/Vazir.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'vazir';
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.text-sm{
+    font-size: 0.875rem;
+}
+.text-base{
+    font-size: 1rem;
+}
+.text-24{
+    font-size: 24px;
+}
+.font-regular{
+    font-weight: 500;
+}
+.font-bold{
+    font-weight: 600;
+}
+.custom-w-28{
+    width: 112px;
+}
+.custom-navbar{
+    background-color: white;
+}
+.custom-nav-logo{
+    width: 32px;
+    height: 32px;
+}
+.custom-mobile-nav{
+    height: 48px;
+}
+.custom-mobile-nav{
+    border-bottom: 1px solid rgb(146, 145, 145);
+}
+.custom-mobile-menu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 3;
+}
+.custom-open-menu{
+    max-width: 70%;
+    width: 70%;
+}
+.custom-close-menu{
+    max-width: 0px;
+}
+.custom-mobile-menu-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+.custom-max-height{
+    max-height: 50rem !important;
+}
+.custom-max-0{
+    max-height: 0px;
+    overflow: hidden;
+}
+.custom-transition{
+    transition: all 0.3s ease;
+}
+.custom-navbar-searchbox input{
+    border-radius: 8px;
+    border: 1px solid rgb(219, 219, 219);
+    padding-right: 32px;
+    height: 32px;
+}
+.custom-navbar-searchbox input:focus{
+    outline: none;
+}
+.custom-navbar-searchbox i{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: rgb(184, 184, 184);
+}
+.custom-navbar-searchbox{
+    position: relative;
+}
