@@ -152,6 +152,65 @@ a , a:hover{
     .custom-col{
         margin-top: 32px;
     }
+    .custom-extra-sellers{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .custom-extra-sellers li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 8px;
+        padding-left: 8px;
+        border-bottom: 1px solid rgb(185, 184, 184);
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .custom-extra-sellers input{
+        border: 1px solid #eaeaea;
+        width: 50%;
+        border-radius: 16px;
+        padding-right: 16px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .custom-extra-sellers button{
+        border-radius: 16px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 992px){
+    .custom-extra-sellers{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+    .custom-extra-sellers li{
+        display: flex;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-bottom: 8px;
+        margin-bottom: 0px !important;
+    }
+    .custom-extra-sellers input{
+        border: 1px solid #eaeaea;
+        width: 100%;
+        border-radius: 16px;
+        padding-right: 16px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .custom-extra-sellers-container > li:not(:last-child){
+        border-bottom: 1px solid rgb(163, 161, 161);
+    }
 }
 @media screen and (max-width: 576px){
     .custom-navbar-searchbox{
@@ -189,33 +248,7 @@ a , a:hover{
     
 }
 @media screen and (max-width: 765px){
-    .custom-extra-sellers{
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .custom-extra-sellers li{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 8px;
-        padding-left: 8px;
-        border-bottom: 1px solid rgb(185, 184, 184);
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-    .custom-extra-sellers input{
-        border: 1px solid #eaeaea;
-        width: 50%;
-        border-radius: 16px;
-        padding-right: 16px;
-        height: 40px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .custom-extra-sellers button{
-        border-radius: 16px;
-        width: 100%;
-    }
+    
     .custom-sellers-input-container{
         width: 100%;
     }
@@ -242,39 +275,11 @@ a , a:hover{
     }
 }
 @media screen and (min-width: 765px){
-    .custom-extra-sellers{
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        justify-content: space-between;
-    }
-    .custom-extra-sellers li{
-        display: flex;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding-right: 8px;
-        padding-left: 8px;
-        padding-bottom: 8px;
-        margin-bottom: 0px !important;
-    }
-    .custom-extra-sellers input{
-        border: 1px solid #eaeaea;
-        width: 100%;
-        border-radius: 16px;
-        padding-right: 16px;
-        height: 40px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    
     .custom-sellers-input-container{
         width: 120px;
     }
-    .custom-extra-sellers-container > li:not(:last-child){
-        border-bottom: 1px solid rgb(163, 161, 161);
-    }
+    
     .custom-add-to-card{
         position: sticky;
         top: 70px;
