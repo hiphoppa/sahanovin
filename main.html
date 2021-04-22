@@ -12,6 +12,9 @@
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -22,93 +25,547 @@
 </head>
 
 <body style="direction: rtl;">
+    <!-- contact -->
+    <div class="w-100 custom-bg-lightgray">
+        <div class="container">
+            <div class="w-100 d-flex align-items-center custom-top-info">
+                <div class="d-none d-sm-flex align-items-center">
+                    <i class="fa fa-location-arrow text-warning text-24"></i>
+                    <span class="text-lg mr-1"> کرج محمدشهر </span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center ml-3">
+                        <span class="text-lg ml-1">09215658</span>
+                        <i class="fa fa-mobile text-warning text-24 mb-1"></i>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="text-lg ml-1">09568941</span>
+                        <i class="fa fa-phone text-warning text-24 mb-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="shadow-sm custom-navbar">
-        <!-- <div class="container"> -->
-            <!-- this item hides on sm and more -->
-            <div class="w-100 custom-mobile-navbar">
-                <div class="container-fluid d-flex d-sm-none justify-content-between align-items-center custom-mobile-nav">
-                    <button type="button" class="btn" @click="openMenu = true"  @click.away="openMenu = false" x-data="{openMenu: false}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27.794" height="17" viewBox="0 0 27.794 17">
-                            <g id="Group_2652" data-name="Group 2652" transform="translate(0 0.5)">
-                              <path id="Path_159" data-name="Path 159" d="M0,0H12.794" fill="none" stroke="#0ea5e9" stroke-width="1"/>
-                              <path id="Path_162" data-name="Path 162" d="M0,0H12.794" transform="translate(15)" fill="none" stroke="#075985" stroke-width="1"/>
-                              <path id="Path_160" data-name="Path 160" d="M0,0H12.794" transform="translate(0 8)" fill="none" stroke="#38bdf8" stroke-width="1"/>
-                              <path id="Path_158" data-name="Path 158" d="M0,0H12.794" transform="translate(15 8)" fill="none" stroke="#0284c7" stroke-width="1"/>
-                              <path id="Path_156" data-name="Path 156" d="M0,0H12.794" transform="translate(0 16)" fill="none" stroke="#075985" stroke-width="1"/>
-                              <path id="Path_157" data-name="Path 157" d="M0,0H12.794" transform="translate(15 16)" fill="none" stroke="#0ea5e9" stroke-width="1"/>
-                            </g>
-                        </svg>
-                        <div class="custom-mobile-menu py-3 shadow" :class="openMenu ? 'custom-open-menu' : 'custom-close-menu'">
-                            <ul class="d-flex flex-column align-items-start pr-2" x-data="{openNavLink: 1}">
-                                <li class="mb-2" @click="openNavLink = 1">
-                                    <span class="text-base"> گزینه یک </span>
-                                    <ul class="d-flex flex-column custom-transition custom-max-0 pr-3" :class="{'custom-max-height' : openNavLink === 1}">
-                                        <li class="mb-2">
-                                            <a href="#" class="text-sm"> زیر گزینه </a>
+        <!-- this item hides on sm and more -->
+        <div class="w-100 custom-mobile-navbar">
+            <div class="container-fluid d-flex d-sm-none justify-content-between align-items-center custom-mobile-nav">
+                <button type="button" class="btn" @click="openMenu = true" @click.away="openMenu = false"
+                    x-data="{openMenu: false}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27.794" height="17" viewBox="0 0 27.794 17">
+                        <g id="Group_2652" data-name="Group 2652" transform="translate(0 0.5)">
+                            <path id="Path_159" data-name="Path 159" d="M0,0H12.794" fill="none" stroke="#0ea5e9"
+                                stroke-width="1" />
+                            <path id="Path_162" data-name="Path 162" d="M0,0H12.794" transform="translate(15)"
+                                fill="none" stroke="#075985" stroke-width="1" />
+                            <path id="Path_160" data-name="Path 160" d="M0,0H12.794" transform="translate(0 8)"
+                                fill="none" stroke="#38bdf8" stroke-width="1" />
+                            <path id="Path_158" data-name="Path 158" d="M0,0H12.794" transform="translate(15 8)"
+                                fill="none" stroke="#0284c7" stroke-width="1" />
+                            <path id="Path_156" data-name="Path 156" d="M0,0H12.794" transform="translate(0 16)"
+                                fill="none" stroke="#075985" stroke-width="1" />
+                            <path id="Path_157" data-name="Path 157" d="M0,0H12.794" transform="translate(15 16)"
+                                fill="none" stroke="#0ea5e9" stroke-width="1" />
+                        </g>
+                    </svg>
+                    <div class="custom-mobile-menu py-3 shadow"
+                        :class="openMenu ? 'custom-open-menu' : 'custom-close-menu'">
+                        <ul class="d-flex flex-column align-items-start pr-2" x-data="{openNavLink: 1}">
+                            <li class="mb-2" @click="openNavLink = 1">
+                                <span class="text-base"> گزینه یک </span>
+                                <ul class="d-flex flex-column custom-transition custom-max-0 pr-3"
+                                    :class="{'custom-max-height' : openNavLink === 1}">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-sm"> زیر گزینه </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-sm"> زیر گزینه </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mb-2" @click="openNavLink = 2">
+                                <span class=""> گزینه یک </span>
+                                <ul class="d-flex flex-column custom-transition custom-max-0 pr-3"
+                                    :class="{'custom-max-height' : openNavLink === 2}">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-sm"> زیر گزینه </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-sm"> زیر گزینه </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mb-2" @click="openNavLink = 3">
+                                <span class=""> گزینه یک </span>
+                                <ul class="d-flex flex-column custom-transition custom-max-0 pr-3"
+                                    :class="{'custom-max-height' : openNavLink === 3}">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-sm"> زیر گزینه </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-sm"> زیر گزینه </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </button>
+                <div class="">
+                    <img src="./logo.png" alt="logo" class="custom-nav-logo" />
+                </div>
+                <a href="#"
+                    class="m-2 btn btn-outline-light text-dark shadow-lg position-relative custom-navbar-badge-container">
+                    <i class="fa fa-shopping-cart text-24"></i>
+                    <div class="custom-navbar-badge">3</div>
+                </a>
+            </div>
+        </div>
+        <!-- navbar on windows size -->
+        <div class="custom-windows-menu shadow-sm d-flex align-items-center">
+            <div class="container-sm d-flex justify-content-between align-items-center custom-mobile-nav">
+                <!-- logo -->
+                <div class="d-none d-sm-flex justify-content-start custom-w-5">
+                    <img src="./logo.png" alt="logo" class="custom-nav-logo" />
+                </div>
+                <!-- searchbox -->
+                <div class="w-100 ml-2">
+                    <form action="" class="mb-0 custom-navbar-searchbox">
+                        <input type="text" class="w-100" placeholder="جست و جو" />
+                        <i class="fa fa-search text-base "></i>
+                    </form>
+                </div>
+                <!-- buttons -->
+                <div class="d-flex align-items-center">
+                    <!-- login -->
+                    <a href="#"
+                        class="btn btn-primary d-sm-flex justify-content-between align-items-center custom-w-4 ml-2 shadow-lg">
+                        <i class="fa fa-user text-24 ml-1"></i>
+                        <span class="text-sm text-regular d-none d-sm-block"> ورود </span>
+                    </a>
+                    <a href="#"
+                        class="btn btn-danger d-sm-flex justify-content-between align-items-center custom-w-5 ml-2 shadow-lg">
+                        <i class="fa fa-sign-out text-24 ml-1"></i>
+                        <span class="text-sm text-regular d-none d-sm-block"> خروج </span>
+                    </a>
+                    <!-- shopping basket on windows -->
+                    <a href="#"
+                        class="btn btn-info d-sm-flex justify-content-between align-items-center d-none custom-w-6">
+                        <i class="fa fa-shopping-cart text-24 ml-1"></i>
+                        <span class="text-sm text-regular"> 3 کالا </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- breadcrumb -->
+    <div class="breadcrumbs">
+        <ul class="container-sm d-flex flex-row align-items-center">
+            <li class="text-sm text-secondary ml-2">
+                <a href="#" class=""> خانه </a>
+            </li>
+            <li class="text-sm text-secondary ml-2">
+                >
+            </li>
+            <li class="text-sm text-secondary ml-2">
+                <a href="#" class=""> خانه </a>
+            </li>
+            <li class="text-sm text-secondary ml-2">
+                >
+            </li>
+            <li class="text-sm text-secondary">
+                <a href="#" class=""> خانه </a>
+            </li>
+        </ul>
+    </div>
+    <!-- content -->
+    <div class="mt-4 container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-8">
+                <div class="row">
+                    <!-- product pic -->
+                    <div class=" col-12 col-lg-6">
+                        <div class="">
+                            <img src="./logo.png" alt="logo" class="w-100" />
+                        </div>
+                        <div class="product-thumbnail-pic d-flex justify-content-between">
+                            <div class="">
+                                <img src="./logo.png" alt="" class="" />
+                            </div>
+                            <div class="">
+                                <img src="./logo.png" alt="" class="" />
+                            </div>
+                            <div class="">
+                                <img src="./logo.png" alt="" class="" />
+                            </div>
+                            <div class="">
+                                <img src="./logo.png" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product info -->
+                    <div class="col-12 col-lg-6 text-right custom-col" x-data="{ isShow: false }">
+                        <!-- category breadcrumb -->
+                        <ul class="d-none d-lg-flex align-items-center pr-0 custom-category-breadcrumb">
+                            <li class="text-sm font-medium ml-2">
+                                <a href="#" class="">آجیل</a>
+                            </li>
+                            <li class="text-sm font-medium ml-2"> > </li>
+                            <li class="text-sm font-medium">
+                                <a href="#" class="">تخمه</a>
+                            </li>
+                        </ul>
+                        <h3 class="font-bold"> کارت صدای اسکارلت </h3>
+                        <div class="d-flex mb-4">
+                            <span class="font-bold"> دسته بندی: </span>
+                            <span class="text-base mr-1"> تخمه آفتاب گردان </span>
+                        </div>
+                        <div class="d-flex align-items-center my-4">
+                            <span class="text-32 font-bold text-success ml-3"> 56000 </span>
+                            <span class="text-32 font-bold ml-3"> - </span>
+                            <span class="text-32 font-bold text-danger"> 25000 </span>
+                        </div>
+                        <h4 class="font-bold"> ویژگی های محصول: </h4>
+                        <ul class="d-flex mt-3 flex-column pr-0">
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 20 دانه </span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 20 دانه </span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 20 دانه </span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 20 دانه </span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 20 دانه </span>
+                            </li>
+                            <li class="align-items-center mb-2" x-show="isShow">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 30 دانه </span>
+                            </li>
+                            <li class="align-items-center mb-2" x-show="isShow">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 30 دانه </span>
+                            </li>
+                            <li class="align-items-center mb-2" x-show="isShow">
+                                <i class="fa fa-dot-circle-o text-danger"></i>
+                                <span class="text-base mr-1"> دانه درشت 30 دانه </span>
+                            </li>
+                        </ul>
+                        <span class="text-base text-primary cursor-pointer" @click="isShow= !isShow"> نمایش بیشتر </span>
+                    </div>
+                    <!-- sellers list -->
+                    <div class="col-12 mt-4">
+                        <div class="d-flex flex-column" x-data="{showSellers: true}">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="d-flex align-items-center ">
+                                    <i class="fa fa-users text-warning text-lg ml-2 mb-1"></i>
+                                    <span class="text-base font-medium"> فروشندگان دیگر </span>
+                                </div>
+                                <button type="button" class="btn btn-light" @click="showSellers= !showSellers">
+                                    <i class="fa fa-arrow-down"></i>
+                                </button>
+                            </div>
+                            <!-- sellers -->
+                            <ul class="d-flex flex-column align-items-center pr-0 custom-extra-sellers-container overflow-hidden" :class="showSellers ? 'max-h-full' : 'max-h-0'">
+                                <li class="w-100">
+                                    <ul class="custom-extra-sellers pr-0">
+                                        <li class="">
+                                            <span class="text-base font-bold"> موجودی </span>
+                                            <span class="text-base font-medium"> 1000 کیلوگرم </span>
                                         </li>
-                                        <li class="mb-2">
-                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        <li class="">
+                                            <span class="text-base font-bold"> قیمت هر کیلو </span>
+                                            <span class="text-base font-medium"> 1000 تومن </span>
+                                        </li>
+                                        <li class="custom-sellers-input-container">
+                                            <input type="number" name="" id="" class="" />
+                                        </li>
+                                        <li class="">
+                                            <button class="btn btn-success"> افزودن به سبد خرید </button>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="mb-2" @click="openNavLink = 2">
-                                    <span class=""> گزینه یک </span>
-                                    <ul class="d-flex flex-column custom-transition custom-max-0 pr-3" :class="{'custom-max-height' : openNavLink === 2}">
-                                        <li class="mb-2">
-                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                <li class="w-100">
+                                    <ul class="custom-extra-sellers pr-0">
+                                        <li class="">
+                                            <span class="text-base font-bold"> موجودی </span>
+                                            <span class="text-base font-medium"> 1000 کیلوگرم </span>
                                         </li>
-                                        <li class="mb-2">
-                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        <li class="">
+                                            <span class="text-base font-bold"> قیمت هر کیلو </span>
+                                            <span class="text-base font-medium"> 1000 تومن </span>
                                         </li>
-                                    </ul>
-                                </li>
-                                <li class="mb-2" @click="openNavLink = 3">
-                                    <span class=""> گزینه یک </span>
-                                    <ul class="d-flex flex-column custom-transition custom-max-0 pr-3" :class="{'custom-max-height' : openNavLink === 3}">
-                                        <li class="mb-2">
-                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        <li class="custom-sellers-input-container">
+                                            <input type="number" name="" id="" class="" />
                                         </li>
-                                        <li class="mb-2">
-                                            <a href="#" class="text-sm"> زیر گزینه </a>
+                                        <li class="">
+                                            <button class="btn btn-success"> افزودن به سبد خرید </button>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                    </button>
-                    <div class="">
-                        <img src="./logo.png" alt="logo" class="custom-nav-logo" />
                     </div>
-                    <a href="#" class="m-2 btn btn-outline-light text-dark">
-                        <i class="fa fa-shopping-cart text-24"></i>
+                    <div class="col-12 mt-5" x-data="{openTab: 1}">
+                        <ul class="d-flex flex-row pr-0 mb-3">
+                            <li class="ml-4 px-3 pb-2 cursor-pointer"
+                                :class="openTab === 1 ? 'text-primary custom-selected-tab' : 'text-secondary'"
+                                @click="openTab= 1">
+                                <span class="text-lg font-medium"> توضیحات </span>
+                            </li>
+                            <li class="ml-4 px-3 pb-2 cursor-pointer"
+                                :class="openTab === 2 ? 'text-primary custom-selected-tab' : 'text-secondary'"
+                                @click="openTab= 2">
+                                <span class="text-lg font-medium"> مشخصات </span>
+                            </li>
+                            <li class="px-3 pb-2 cursor-pointer" :class="openTab === 3 ? 'text-primary custom-selected-tab' : 'text-secondary'" @click="openTab= 3">
+                                <span class="text-lg font-medium"> دیدگاه </span>
+                            </li>
+                        </ul>
+                        <div class="" x-show="openTab === 1">
+                            <div class="text-base font-medium text-right">
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                                است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
+                                فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
+                                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
+                                فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
+                                موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
+                                دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
+                                گیرد.
+                            </div>
+                        </div>
+                        <div class="" x-show="openTab === 2">
+                            <ul class="d-flex flex-column pr-0">
+                                <li
+                                    class="d-flex align-items-center border border-top-0 border-left-0 border-right-0 mb-4 pb-2">
+                                    <span class="w-50 text-base font-medium text-right"> اندازه </span>
+                                    <div class="w-50 text-base font-medium text-right">
+                                        <span class=""> 1024 </span>
+                                        <span class=""> سانتی متر </span>
+                                    </div>
+                                </li>
+                                <li
+                                    class="d-flex align-items-center border border-top-0 border-left-0 border-right-0 mb-4 pb-2">
+                                    <span class="w-50 text-base font-medium text-right"> وزن </span>
+                                    <div class="w-50 text-base font-medium text-right">
+                                        <span class=""> 200 </span>
+                                        <span class=""> کیلو گرم </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="" x-show="openTab === 3">
+                            <div class="border d-flex flex-column shadow rounded-sm mb-4">
+                                <div
+                                    class="d-flex justify-content-between align-items-center border border-top-0 border-right-0 border-left-0 custom-top-info px-4">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center text-base font-medium">
+                                        <span class="ml-2"> میثم </span>
+                                        <span class="ml-2"> - </span>
+                                        <span class="text-secondary"> 4 ماه پیش </span>
+                                    </div>
+                                    <button type="button" class="text-success text-base font-medium btn"> پاسخ </button>
+                                </div>
+                                <div class="px-4 py-4">
+                                    <div class="d-block text-right mb-4">
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                                    </div>
+                                    <div class="d-flex flex-column px-4 py-2 custom-bg-lightgray rounded-sm">
+                                        <div class="d-flex align-items-center text-base font-medium py-2">
+                                            <span class="ml-2"> محصولات برگزیده </span>
+                                            <span class="ml-2"> - </span>
+                                            <span class="text-secondary"> 4 ماه پیش </span>
+                                        </div>
+                                        <div class="text-base font-medium text-right">
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border d-flex flex-column shadow rounded-sm">
+                                <div
+                                    class="d-flex justify-content-between align-items-center border border-top-0 border-right-0 border-left-0 custom-top-info px-4">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center text-base font-medium">
+                                        <span class="ml-2"> میثم </span>
+                                        <span class="ml-2"> - </span>
+                                        <span class="text-secondary"> 4 ماه پیش </span>
+                                    </div>
+                                    <button type="button" class="text-success text-base font-medium btn"> پاسخ </button>
+                                </div>
+                                <div class="px-4 py-4">
+                                    <div class="d-block text-right">
+                                        درست بنویس.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 custom-col">
+                <div class="border rounded-sm custom-bg-lightgray shadow-sm custom-add-to-card">
+                    <ul class="d-flex flex-column mb-0 pr-2">
+                        <li class="text-right py-2 mx-2 border border-secondary border-top-0 border-right-0 border-left-0">
+                            <span class="text-base font-bold d-block"> فروشنده: </span>
+                            <span class="text-lg font-bold d-block"> فروشگاه سهانوین </span>
+                        </li>
+                        <li class="text-right py-2 mx-2 border border-secondary border-top-0 border-right-0 border-left-0">
+                            <span class="text-base font-bold d-block"> انبار محصول: </span>
+                            <span class="text-lg font-bold d-block"> جام اصفهان </span>
+                        </li>
+                        <li class="text-right py-2 mx-2 border border-secondary border-top-0 border-right-0 border-left-0">
+                            <span class="text-base font-bold d-block"> انبار محصول: </span>
+                            <span class="text-lg font-bold d-block"> جام اصفهان </span>
+                        </li>
+                        <li class="text-right py-2 mx-2 border border-secondary border-top-0 border-right-0 border-left-0">
+                            <span class="text-base font-bold d-block"> انبار محصول: </span>
+                            <span class="text-lg font-bold d-block"> جام اصفهان </span>
+                        </li>
+                        <li class="custom-addproduct py-2 mx-2 d-none d-md-flex justify-content-between align-items-center">
+                            <input type="number" name="" id="" class="pr-3" />
+                            <button class="btn btn-success text-base font-medium "> افزودن به سبد خرید </button>
+                        </li>
+                    </ul>
+                    <!-- button fixed to bottom on mobile size -->
+                    <div class="custom-addproduct-fixed bg-light py-2 mx-2 justify-content-between align-items-center">
+                        <input type="number" name="" id="" class="pr-3" />
+                        <button class="btn btn-success text-base font-medium "> افزودن به سبد خرید </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100">
+        <div class="container custom-mt-20">
+            <div class="d-flex">
+                <i class="fa fa-product-hunt text-24 ml-3 text-warning my-auto"></i>
+                <span class="text-24 gont-bold"> محصولات مرتبط </span>
+            </div>
+            <div class="swiper-container mt-5">
+                <div class="swiper-wrapper">
+                    <a href="#" class="swiper-slide shadow">
+                        <div class="d-flex flex-column p-2">
+                            <div class="swiper-img">
+                                <img src="./logo.png" alt="product" class="w-100 h-100" />
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-block text-center text-base font-medium text-dark"> بادام زمینی </div>
+                                <div class="d-block text-center text-base font-bold text-danger"> ناموجود </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="swiper-slide shadow">
+                        <div class="d-flex flex-column p-2">
+                            <div class="swiper-img">
+                                <img src="./logo.png" alt="product" class="w-100 h-100" />
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-block text-center text-base font-medium text-dark"> تخمه آفتاب گردان شمشیری </div>
+                                <div class="d-block text-center text-base font-bold text-success"> 31000 تومان </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="swiper-slide shadow">
+                        <div class="d-flex flex-column p-2">
+                            <div class="swiper-img">
+                                <img src="./logo.png" alt="product" class="w-100 h-100" />
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-block text-center text-base font-medium text-dark"> مغز پسته </div>
+                                <div class="d-block text-center text-base font-bold text-danger"> نا موجود </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="swiper-slide shadow">
+                        <div class="d-flex flex-column p-2">
+                            <div class="swiper-img">
+                                <img src="./logo.png" alt="product" class="w-100 h-100" />
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-block text-center text-base font-medium text-dark"> بادام زمینی </div>
+                                <div class="d-block text-center text-base font-bold text-success"> 50000 تومان </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="swiper-slide shadow">
+                        <div class="d-flex flex-column p-2">
+                            <div class="swiper-img">
+                                <img src="./logo.png" alt="product" class="w-100 h-100" />
+                            </div>
+                            <div class="mt-4">
+                                <div class="d-block text-center text-base font-medium text-dark"> بادام زمینی </div>
+                                <div class="d-block text-center text-base font-bold text-success"> 50000 تومان </div>
+                            </div>
+                        </div>
                     </a>
                 </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-            <!-- navbar on windows size -->
-            <div class=" shadow-sm">
-                <div class="container-fluid d-flex justify-content-between align-items-center custom-mobile-nav">
-                    <div class="w-100">
-                        <form action="" class="mb-0 custom-navbar-searchbox">
-                            <input type="text" class="w-100" placeholder="جست و جو" />
-                            <i class="fa fa-search text-base "></i>
-                        </form>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <a href="#" class="btn btn-outline-light text-dark text-sm custom-w-28 ml-1">
-                            پنل فروشگاه
-                        </a>
-                        <a href="#" class="btn btn-outline-light text-dark">
-                            <i class="fa fa-user text-24"></i>
-                        </a>
+        </div>
+    </div>
+    <div class="w-100 custom-mt-20 custom-bg-gray-50 mb-5 pb-5">
+        <div class="container">
+            <div class="d-flex align-items-center pt-5">
+                <div class="w-100 custom-h-px"></div>
+                <div class="d-flex text-center text-lg font-bold">
+                    <span class="custom-w-10"> ارسال دیدگاه </span>
+                </div>
+                <div class="w-100 custom-h-px"></div>
+                <hr/>
+            </div>
+            <form action="" class="custom-comments d-flex align-items-center">
+                <div class="w-100  pr-4">
+                    <div class="d-flex flex-column">
+                        <div class="mt-4 text-right">
+                            <label for="" class="text-sm font-medium "> نام و نام خانوادگی </label>
+                            <input type="text" class="custom-form-input w-100 pr-4 custom-h-35" id="" />
+                        </div>
+                        <div class="mt-4 text-right">
+                            <label for="" class="text-sm font-medium "> ایمیل </label>
+                            <input type="text" class="custom-form-input w-100 pr-4 custom-h-35" id="" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        <!-- </div> -->
-    </nav>
+                <div class="w-100 pr-4">
+                    <div class="mt-4 d-flex flex-column text-right">
+                        <label for="" class="text-sm font-medium "> نظر </label>
+                        <!-- <input type="text" class="custom-form-input w-100 pr-4" id="" /> -->
+                        <textarea name="" id="" cols="50" rows="5" class="custom-form-input pr-4 w-100"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <!-- <script src="/bootstrap.min.js"></script> -->
-    <!-- <script src="/jquery.min.js"></script> -->
-    <!-- <script src="/popper.min.js"></script> -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            loop: true,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
